@@ -2,7 +2,7 @@
 function fn() {
   var env = karate.env; // get system property 'karate.env'
 //env='stage';
-  karate.log('karate.env system property was:', env);
+  //karate.log('karate.env system property was:', env);
 
   if (!env) {
     env = 'e2e';
