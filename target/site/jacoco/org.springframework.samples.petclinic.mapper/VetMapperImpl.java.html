@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>VetMapperImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">spring-petclinic-rest</a> &gt; <a href="index.source.html" class="el_package">org.springframework.samples.petclinic.mapper</a> &gt; <span class="el_source">VetMapperImpl.java</span></div><h1>VetMapperImpl.java</h1><pre class="source lang-java linenums">package org.springframework.samples.petclinic.mapper;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+import javax.annotation.processing.Generated;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.samples.petclinic.model.Specialty;
+import org.springframework.samples.petclinic.model.Vet;
+import org.springframework.samples.petclinic.rest.dto.SpecialtyDto;
+import org.springframework.samples.petclinic.rest.dto.VetDto;
+import org.springframework.samples.petclinic.rest.dto.VetFieldsDto;
+import org.springframework.stereotype.Component;
+
+@Generated(
+    value = &quot;org.mapstruct.ap.MappingProcessor&quot;
+)
+@Component
+<span class="fc" id="L19">public class VetMapperImpl implements VetMapper {</span>
+
+    @Autowired
+    private SpecialtyMapper specialtyMapper;
+
+    @Override
+    public Vet toVet(VetDto vetDto) {
+<span class="pc bpc" id="L26" title="1 of 2 branches missed.">        if ( vetDto == null ) {</span>
+<span class="nc" id="L27">            return null;</span>
+        }
+
+<span class="fc" id="L30">        Vet vet = new Vet();</span>
+
+<span class="fc" id="L32">        vet.setId( vetDto.getId() );</span>
+<span class="fc" id="L33">        vet.setFirstName( vetDto.getFirstName() );</span>
+<span class="fc" id="L34">        vet.setLastName( vetDto.getLastName() );</span>
+<span class="fc" id="L35">        vet.setSpecialties( specialtyDtoListToSpecialtyList( vetDto.getSpecialties() ) );</span>
+
+<span class="fc" id="L37">        return vet;</span>
+    }
+
+    @Override
+    public Vet toVet(VetFieldsDto vetFieldsDto) {
+<span class="nc bnc" id="L42" title="All 2 branches missed.">        if ( vetFieldsDto == null ) {</span>
+<span class="nc" id="L43">            return null;</span>
+        }
+
+<span class="nc" id="L46">        Vet vet = new Vet();</span>
+
+<span class="nc" id="L48">        vet.setFirstName( vetFieldsDto.getFirstName() );</span>
+<span class="nc" id="L49">        vet.setLastName( vetFieldsDto.getLastName() );</span>
+<span class="nc" id="L50">        vet.setSpecialties( specialtyDtoListToSpecialtyList( vetFieldsDto.getSpecialties() ) );</span>
+
+<span class="nc" id="L52">        return vet;</span>
+    }
+
+    @Override
+    public VetDto toVetDto(Vet vet) {
+<span class="pc bpc" id="L57" title="1 of 2 branches missed.">        if ( vet == null ) {</span>
+<span class="nc" id="L58">            return null;</span>
+        }
+
+<span class="fc" id="L61">        VetDto vetDto = new VetDto();</span>
+
+<span class="fc" id="L63">        vetDto.setFirstName( vet.getFirstName() );</span>
+<span class="fc" id="L64">        vetDto.setLastName( vet.getLastName() );</span>
+<span class="fc" id="L65">        vetDto.setSpecialties( specialtyListToSpecialtyDtoList( vet.getSpecialties() ) );</span>
+<span class="fc" id="L66">        vetDto.setId( vet.getId() );</span>
+
+<span class="fc" id="L68">        return vetDto;</span>
+    }
+
+    @Override
+    public Collection&lt;VetDto&gt; toVetDtos(Collection&lt;Vet&gt; vets) {
+<span class="pc bpc" id="L73" title="1 of 2 branches missed.">        if ( vets == null ) {</span>
+<span class="nc" id="L74">            return null;</span>
+        }
+
+<span class="fc" id="L77">        Collection&lt;VetDto&gt; collection = new ArrayList&lt;VetDto&gt;( vets.size() );</span>
+<span class="fc bfc" id="L78" title="All 2 branches covered.">        for ( Vet vet : vets ) {</span>
+<span class="fc" id="L79">            collection.add( toVetDto( vet ) );</span>
+<span class="fc" id="L80">        }</span>
+
+<span class="fc" id="L82">        return collection;</span>
+    }
+
+    protected List&lt;Specialty&gt; specialtyDtoListToSpecialtyList(List&lt;SpecialtyDto&gt; list) {
+<span class="pc bpc" id="L86" title="1 of 2 branches missed.">        if ( list == null ) {</span>
+<span class="nc" id="L87">            return null;</span>
+        }
+
+<span class="fc" id="L90">        List&lt;Specialty&gt; list1 = new ArrayList&lt;Specialty&gt;( list.size() );</span>
+<span class="pc bpc" id="L91" title="1 of 2 branches missed.">        for ( SpecialtyDto specialtyDto : list ) {</span>
+<span class="nc" id="L92">            list1.add( specialtyMapper.toSpecialty( specialtyDto ) );</span>
+<span class="nc" id="L93">        }</span>
+
+<span class="fc" id="L95">        return list1;</span>
+    }
+
+    protected List&lt;SpecialtyDto&gt; specialtyListToSpecialtyDtoList(List&lt;Specialty&gt; list) {
+<span class="pc bpc" id="L99" title="1 of 2 branches missed.">        if ( list == null ) {</span>
+<span class="nc" id="L100">            return null;</span>
+        }
+
+<span class="fc" id="L103">        List&lt;SpecialtyDto&gt; list1 = new ArrayList&lt;SpecialtyDto&gt;( list.size() );</span>
+<span class="pc bpc" id="L104" title="1 of 2 branches missed.">        for ( Specialty specialty : list ) {</span>
+<span class="nc" id="L105">            list1.add( specialtyMapper.toSpecialtyDto( specialty ) );</span>
+<span class="nc" id="L106">        }</span>
+
+<span class="fc" id="L108">        return list1;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>
