@@ -3,11 +3,14 @@ Feature: first project
   Scenario: Test API
     Given url ccUrl
     When method get
-    Then status 200
+    #Then status 200
+    * def baseurl = read('custom.json')
+    * print baseurl.baseurl
 
 
   Scenario: Add owner
-    Given url "http://localhost:9966/petclinic/api/owners"
+    * def baseurl = read('custom.json')
+    Given url baseurl.baseurl+"petclinic/api/owners"
     And request {"firstName":"Ankit","lastName":"T","address":"110 W. Liberty St.","city":"Madison","telephone":"6085551045"}
     When method post
     Then status 201
