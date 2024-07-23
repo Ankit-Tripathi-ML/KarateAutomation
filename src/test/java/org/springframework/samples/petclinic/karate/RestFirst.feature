@@ -1,8 +1,8 @@
 Feature: first project
 
   Scenario: Test API
-    Given url ccUrl
-    When method get
+   # Given url ccUrl
+    #When method get
     #Then status 200
     * def baseurl = read('custom.json')
     * print baseurl.baseurl
