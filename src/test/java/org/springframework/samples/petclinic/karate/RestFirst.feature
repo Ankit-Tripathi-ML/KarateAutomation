@@ -23,5 +23,5 @@ Feature: first project
         "id": '#(id)'
       }
       """
-    * def user = call read('sub1/Get.feature')
+    * def user = call read('sub1/Get.feature') jsonObject
     * print user
