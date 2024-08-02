@@ -1,13 +1,11 @@
-# API TestAutomation framework
+# API Test Orchestration framework
 
 
 ## Description
 
-This test framework functions as a powerful execution engine for running API test cases. To utilize this framework effectively, it is necessary to write test cases using the Karate Framework, which is specifically designed for API testing. The Karate Framework allows for creating comprehensive, easy-to-read, and maintainable test scripts.
+This test Orchestration tool functions as a versatile execution engine for API test cases. It is designed to be compatible with multiple testing frameworks, providing a robust and flexible solution for API testing. Although we have illustrated its usage with the Karate Framework, this execution engine is capable of integrating seamlessly with other popular testing frameworks as well.
 
-To get started with writing test cases using the Karate Framework, follow the detailed instructions provided here:
-
- https://github.com/karatelabs/karate
+To get started with writing test cases using the Karate Framework, detailed instructions and examples are provided in the following sections. These guidelines will help you understand how to structure and implement your test cases effectively, ensuring comprehensive and reliable API testing.
 
 These instructions will guide you through the process of setting up your environment, writing your first test cases, and utilizing advanced features of the Karate Framework to ensure robust API testing.
 This execution engine will help in following aspects
